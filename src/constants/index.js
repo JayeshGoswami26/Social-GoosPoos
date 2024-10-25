@@ -29,7 +29,7 @@ import {
   google,
   instagramLogo,
   facebookLogo,
-  chatgpt,
+  // chatgpt,
   amazonAds,
   twitterAds,
   linkdin,
@@ -37,7 +37,7 @@ import {
   instagramColab,
   facebookColab,
   twitterColab,
-  chatGptColab,
+  // chatGptColab,
   pinterestColab,
   amazonAdsColab,
   SVG1,
@@ -61,34 +61,39 @@ import {
 export const navigation = [
   {
     id: "0",
-    title: "Features",
-    url: "#features",
+    title: "Market Hub",
+    url: "/",
   },
   {
     id: "1",
-    title: "Advertisements",
-    url: "#advertisements",
+    title: "Influencer Boost",
+    url: "/influencer-boost",
   },
   {
     id: "2",
-    title: "About",
-    url: "#how-to-use",
+    title: "Dashboard Mastery",
+    url: "/dashboard-mastery",
   },
-  {
-    id: "3",
-    title: "Service",
-    url: "#roadmap",
-  },
-  {
-    id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
+  // {
+  //   id: "3",
+  //   title: "About",
+  //   url: "#how-to-use",
+  // },
+  // {
+  //   id: "4",
+  //   title: "Service",
+  //   url: "#roadmap",
+  // },
+  // {
+  //   id: "5",
+  //   title: "New account",
+  //   url: "#signup",
+  //   onlyMobile: true,
+  // },
   {
     id: "5",
-    title: "Sign in",
-    url: "#login",
+    title: "Contact US",
+    url: "/contact-us",
     onlyMobile: true,
   },
 ];
@@ -200,6 +205,33 @@ export const collabContent = [
     id: "2",
     title: "Top-notch Security",
   },
+];
+
+export const InfluencerCollabContent = [
+  {
+    id: "0",
+    title: "Create Your Profile",
+  },
+  {
+    id: "1",
+    title: "Browse Opportunities",
+  },
+  {
+    id: "2",
+    title: "Submit Applications",
+  },
+  {
+    id: "3",
+    title: "Connect and Collaborate",
+  },
+  {
+    id: "4",
+    title: "Amplify Your Influence",
+  },
+  {
+    id: "5",
+    title: "Track Your Success",
+  }
 ];
 
 export const collabApps = [

@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from "swiper/modules";
 
-const CompanyLogos = ({ className }) => {
+const CompanyLogos = ({ className , Title }) => {
   return (
     <div className={className}>
       <h5 className="tagline mb-6 text-center text-n-1/90">
         {/* Effortlessly Transform Digital Traffic into Real Sales. */}
-        Elevate your brand visibility on:
+        {Title}
       </h5>
       <Swiper
         breakpoints={{

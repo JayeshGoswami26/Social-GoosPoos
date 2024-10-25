@@ -11,8 +11,8 @@ import CompanyLogos from "./CompanyLogos";
 import { GlobeDemo } from "./GlobDemo";
 import { SparklesCore } from "./ui/sparkles";
 import { Spotlight } from "./ui/Spotlight";
+import { motion } from "framer-motion";
 // import ThemeButton from "./ThemeButton";
-
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -27,11 +27,20 @@ const Hero = () => {
     >
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
-        <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="#ec8ae6"
-      />
-          <h1 className="h1 mb-6">
+          <Spotlight
+            className="-top-40 left-0 md:left-60 md:-top-20"
+            fill="#ec8ae6"
+          />
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.2,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="h1 mb-6"
+          >
             Taking Your Business Online, From Website to Wow! <br />
             <span className="inline-block relative">
               SOCIAL GOOSPOOS{" "}
@@ -43,23 +52,56 @@ const Hero = () => {
                 alt="Curve"
               />
             </span>
-          </h1>
-          <p className="body-1 max-w-3xl mx-auto my-6 text-n-2 lg:my-8">
-          Achieve Steady Growth in Google Ads with Our Proven 90-Day Success System – Results You Can Count On.
-          </p>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.4,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="body-1 max-w-3xl mx-auto my-6 text-n-2 lg:my-8"
+          >
+            Achieve Steady Growth in Google Ads with Our Proven 90-Day Success
+            System – Results You Can Count On.
+          </motion.p>
           {/* <ThemeButton  href="/pricing" white>
             Get started
           </ThemeButton> */}
-          <Button className="" href="#">
-          Get started
-          </Button>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.6,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className=""
+          >
+            <Button className="" href="#">
+              Get started
+            </Button>
+          </motion.div>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
+          <motion.div initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.8,
+                      duration: 0.8,
+                      ease: "easeInOut",
+                    }} className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
-              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+              <motion.div initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.8,
+                      duration: 0.8,
+                      ease: "easeInOut",
+                    }} className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <div className="w-full h-full relative">
                   <GlobeDemo />
 
@@ -92,11 +134,11 @@ const Hero = () => {
                     title="Brands Looking"
                   />
                 </ScrollParallax>
-              </div>
+              </motion.div>
             </div>
 
             <Gradient />
-          </div>
+          </motion.div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <img
               src={heroBackground}
@@ -110,7 +152,10 @@ const Hero = () => {
           <BackgroundCircles />
         </div>
 
-        <CompanyLogos className=" relative z-10 mt-20 lg:block" />
+        <CompanyLogos
+          Title={`Elevate your brand visibility on: `}
+          className=" relative z-10 mt-20 lg:block"
+        />
       </div>
 
       <BottomLine />

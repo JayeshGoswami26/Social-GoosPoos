@@ -6,6 +6,7 @@ import Section from "./Section";
 // import Arrow from "../assets/svg/Arrow";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
+import { motion } from "framer-motion";
 
 const Benefits = () => {
   const cardRefs = useRef([]);
@@ -36,22 +37,40 @@ const Benefits = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
-        <Heading
-          className="md:max-w-md lg:max-w-2xl text-center"
-          title="Elevate Your Business With SOCIAL GOOSPOOS "
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.2,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className=""
+        >
+          <Heading
+            className="md:max-w-md lg:max-w-2xl text-center"
+            title="Elevate Your Business With SOCIAL GOOSPOOS "
+          />
+        </motion.div>
 
         <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.2*index,
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
               ref={(el) => (cardRefs.current[index] = el)} // Attach the ref to each card
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] transform transition-transform cursor-pointer"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}
-              key={item.id} 
+              key={item.id}
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none" >
+              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
                 <h5 className="h5 mb-5">{item.title}</h5>
                 <p className="body-2 mb-6 text-n-3">{item.text}</p>
                 <div className="flex items-center mt-auto justify-between">
@@ -88,14 +107,14 @@ const Benefits = () => {
                       height={362}
                       alt={item.title}
                       className="w-full h-full object-cover  "
-                      draggable = "false"
+                      draggable="false"
                     />
                   )}
                 </div>
               </div>
 
               <ClipPath />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

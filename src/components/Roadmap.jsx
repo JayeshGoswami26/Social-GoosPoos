@@ -5,17 +5,29 @@ import Section from "./Section";
 import { roadmap } from "../constants";
 import { grid } from "../assets";
 import { Gradient } from "./design/Roadmap";
+import { motion } from "framer-motion";
 
 const Roadmap = () => (
   <Section className="overflow-hidden" id="roadmap">
     <div className="container md:pb-10">
-      <Heading
-        tag="THE SOLUTION"
-        title="Integrated Digital Marketing for Brands Looking to Grow"
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.2,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className=""
+      >
+        <Heading
+          tag="THE SOLUTION"
+          title="Integrated Digital Marketing for Brands Looking to Grow"
+        />
+      </motion.div>
 
       <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
-        {roadmap.map((item) => {
+        {roadmap.map((item, index) => {
           // const status = item.status === "done" ? "Done" : "In progress";
 
           return (
@@ -26,8 +38,30 @@ const Roadmap = () => (
               key={item.id}
             >
               <div className="relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15">
-                <h4 className="h4 mb-4">{item.title}</h4>
-                <p className="body-2 text-n-4">{item.text}</p>
+                <motion.h4
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.2,
+                    duration: 0.8,
+                    ease: "easeInOut",
+                  }}
+                  className="h4 mb-4"
+                >
+                  {item.title}
+                </motion.h4>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.4,
+                    duration: 0.8,
+                    ease: "easeInOut",
+                  }}
+                  className="body-2 text-n-4"
+                >
+                  {item.text}
+                </motion.p>
 
                 <div className="absolute top-28 left-0 max-w-full">
                   <img
@@ -43,29 +77,122 @@ const Roadmap = () => (
                     <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-[25rem] md:w-[25rem] md:h-[25rem]">
                       <div className="flex flex-col items-center justify-center gap-5 bg-blue-500/10 shadow-xl shadow-neutral-950 text-white rounded-2xl">
                         <div className="">
-                          <img className="w-[4rem] h-[4rem]" src={item.svgUrl1} alt="" />
+                          <motion.img
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                              delay: 0.6,
+                              duration: 0.8,
+                              ease: "easeInOut",
+                            }}
+                            className="w-[4rem] h-[4rem]"
+                            src={item.svgUrl1}
+                            alt=""
+                          />
                         </div>
-                        <div className="text-center px-5 font-code"> {item.svgText1} </div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            delay: 0.8,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                          }}
+                          className="text-center px-5 font-code"
+                        >
+                          {" "}
+                          {item.svgText1}{" "}
+                        </motion.div>
                       </div>
                       <div className="flex flex-col items-center justify-center gap-5 bg-blue-500/10 shadow-xl shadow-neutral-950 text-white rounded-2xl">
-                        <div className="">
-                        <img className="w-[4rem] h-[4rem]" src={item.svgUrl2} alt="" />
-                        </div>
-                        <div className="text-center px-5 font-code">{item.svgText2}</div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            delay: 0.6,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                          }}
+                          className=""
+                        >
+                          <img
+                            className="w-[4rem] h-[4rem]"
+                            src={item.svgUrl2}
+                            alt=""
+                          />
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            delay: 0.8,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                          }}
+                          className="text-center px-5 font-code"
+                        >
+                          {item.svgText2}
+                        </motion.div>
                       </div>
                       <div className="flex flex-col items-center justify-center gap-5 bg-blue-500/10 shadow-xl shadow-neutral-950 text-white rounded-2xl">
-                        <div className="">
-                        <img className="w-[4rem] h-[4rem]" src={item.svgUrl3} alt="" />
-
-                        </div>
-                        <div className="text-center px-5 font-code">{item.svgText3}</div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            delay: 0.6,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                          }}
+                          className=""
+                        >
+                          <img
+                            className="w-[4rem] h-[4rem]"
+                            src={item.svgUrl3}
+                            alt=""
+                          />
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            delay: 0.8,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                          }}
+                          className="text-center px-5 font-code"
+                        >
+                          {item.svgText3}
+                        </motion.div>
                       </div>
                       <div className="flex flex-col items-center justify-center gap-5 bg-blue-500/10 shadow-xl shadow-neutral-950 text-white rounded-2xl">
-                        <div className="">
-                        <img className="w-[4rem] h-[4rem]" src={item.svgUrl4} alt="" />
-
-                        </div>
-                        <div className="text-center px-5 font-code">{item.svgText4}</div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            delay: 0.6,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                          }}
+                          className=""
+                        >
+                          <img
+                            className="w-[4rem] h-[4rem]"
+                            src={item.svgUrl4}
+                            alt=""
+                          />
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            delay: 0.8,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                          }}
+                          className="text-center px-5 font-code"
+                        >
+                          {item.svgText4}
+                        </motion.div>
                       </div>
                     </div>
 

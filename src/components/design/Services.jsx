@@ -1,5 +1,6 @@
-import {  gradient,  play } from "../../assets";
+import { gradient, play } from "../../assets";
 import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
+import { motion } from "framer-motion";
 
 export const Gradient = () => {
   return (
@@ -17,17 +18,26 @@ export const Gradient = () => {
 
 export const PhotoChatMessage = () => {
   return (
-    <div className="absolute top-[20%] left-0 scale-75 lg:scale-100 max-w-[17.5rem] py-6 px-8 bg-black rounded-t-xl rounded-bl-xl font-code text-base lg:top-16 lg:left-[2rem] lg:max-w-[17.5rem]">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: 0.4,
+        duration: 1,
+        ease: "easeInOut",
+      }}
+      className="absolute top-[20%] left-0 scale-75 lg:scale-100 max-w-[17.5rem] py-6 px-8 bg-black rounded-t-xl rounded-bl-xl font-code text-base lg:top-16 lg:left-[2rem] lg:max-w-[17.5rem]"
+    >
       Hey Social Goospoos, Take my business online
       <ChatBubbleWing className="absolute left-full bottom-0" />
-    </div>
+    </motion.div>
   );
 };
 
-export const VideoChatMessage = ({title}) => {
+export const VideoChatMessage = ({ title }) => {
   return (
     <div className="absolute top-8 left-[3.125rem] w-full max-w-[14rem] pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl font-code text-base md:max-w-[17.5rem]">
-       {title}
+      {title}
       {/* <p className="tagline absolute right-2.5 bottom-1 text-[0.625rem] text-n-3 uppercase">
         just now
       </p> */}

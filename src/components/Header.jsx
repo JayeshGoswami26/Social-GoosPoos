@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 // import { brainwave } from "../assets";
@@ -7,12 +7,13 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
-import Logo from '../assets/LOGO-2.png'
+import Logo from "../assets/LOGO-2.png";
 // import ThemeButton from "./ThemeButton";
 
 const Header = () => {
-  const pathname = useLocation();
+  // const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
@@ -33,7 +34,14 @@ const Header = () => {
   };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: 0,
+        duration: 0.8,
+        ease: "easeIn",
+      }}
       className={`fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
         openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}
@@ -46,38 +54,40 @@ const Header = () => {
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
+          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent  `}
         >
-          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row ">
             {navigation.map((item) => (
-              <a
+              <NavLink
                 key={item.id}
-                href={item.url}
+                to={item.url}
                 onClick={handleClick}
-                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
-                  item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                  item.url === pathname.hash
-                    ? "z-2 lg:text-n-1"
-                    : "lg:text-n-1/50"
-                } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+                className={(e) =>
+                  e.isActive
+                    ? ` duration-500 ease-in-out block relative font-code text-3xl uppercase z-2 lg:text-white  hover:text-color-1 ${
+                        item.onlyMobile ? "lg:hidden" : ""
+                      } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-base lg:font-semibold  z-2 lg:text-n-1 lg:leading-5 lg:hover:text-n-1 xl:px-12`
+                    : `duration-500 ease-in-out block relative font-code text-2xl uppercase text-n-1  hover:text-color-1 ${
+                        item.onlyMobile ? "lg:hidden" : ""
+                      } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold  lg:leading-5 lg:hover:text-n-1 xl:px-12 lg:text-n-1/50`
+                }
               >
                 {item.title}
-              </a>
+              </NavLink>
             ))}
           </div>
 
           <HamburgerMenu />
         </nav>
 
-        <a
+        {/* <a
           href="#signup"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           New account
-        </a>
-        <Button className="hidden lg:flex" href="#login">
-          Sign in
+        </a> */}
+        <Button className="hidden lg:flex" to="/contact-us">
+          Contact Us
         </Button>
         {/* <ThemeButton hoverText={'Sign in'} >
           Sign in
@@ -91,7 +101,7 @@ const Header = () => {
           <MenuSvg openNavigation={openNavigation} />
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

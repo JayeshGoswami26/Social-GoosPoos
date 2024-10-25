@@ -25,7 +25,8 @@ import background from "./background.jpg";
 
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
-import heroBackground from "./hero/hero-background.jpg";
+import heroBackground from "./hero/AssetsImage.png";
+import heroButturfly from "./hero/1.gif";
 
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
@@ -44,8 +45,7 @@ import linkdin from "./collaboration/Linkedin-Logo-1.png";
 import facebookLogo from "./collaboration/Facebook-Logo-PNG12-1.png";
 import amazonAds from "./collaboration/amazon-ads-1.png";
 import twitterAds from "./collaboration/Twitter-Logo-1.png";
-import YoutubeAds from './collaboration/Youtube.png'
-
+import YoutubeAds from "./collaboration/Youtube.png";
 
 import googleColab from "./collaboration/Google.png";
 import instagramColab from "./collaboration/Instagram.png";
@@ -55,7 +55,7 @@ import linkedinColab from "./collaboration/linkedin.png";
 import amazonAdsColab from "./collaboration/amazon.png";
 import chatGptColab from "./collaboration/chat-gpt.svg";
 import pinterestColab from "./collaboration/pinterest.svg";
-import YoutubeAdsColab from './collaboration/Youtube-Logo.png'
+import YoutubeAdsColab from "./collaboration/Youtube-Logo.png";
 
 import service1 from "./Untitled-design-1--unscreen.gif";
 import service2 from "./services/service-2.png";
@@ -91,6 +91,7 @@ import SVG11 from "./roadmap/SVG-11.svg";
 import SVG12 from "./roadmap/SVG-12.svg";
 import SVG13 from "./roadmap/SVG-13.svg";
 import SVG14 from "./roadmap/SVG-14.svg";
+// import SvgShap_1 from './benefits/SvgShap_1.xml'
 
 import notification1 from "./notification/image-1.png";
 import notification2 from "./notification/image-2.png";
@@ -115,7 +116,34 @@ import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
+import bg1 from "./Digital-Influence/1.jpg";
+import bg2 from "./Digital-Influence/10.jpg";
+import bg3 from "./Digital-Influence/2.png";
+import bg4 from "./Digital-Influence/12.jpg";
+import bg5 from "./Digital-Influence/19.jpeg";
+import bg6 from "./Digital-Influence/9.jpg";
+import bg7 from "./Digital-Influence/11.jpg";
+
+
+import avatar from "./Digital-Influence/IMG-24.png";
+import avatar2 from "./Digital-Influence/IMG-28.png";
+import avatar3 from './Digital-Influence/IMG-29.png'
+import avatar4 from './Digital-Influence/IMG-30.png'
+import avatar5 from './Digital-Influence/IMG-31.png'
+
 export {
+  avatar,
+  avatar2,
+  avatar3,
+  avatar4,
+  avatar5,
+  bg1,
+  bg2,
+  bg3,
+  bg4,
+  bg5,
+  bg6,
+  bg7,
   brainwave,
   check,
   check2,
@@ -140,6 +168,7 @@ export {
   background,
   curve,
   robot,
+  heroButturfly,
   heroBackground,
   curve1,
   curve2,
@@ -182,6 +211,7 @@ export {
   SVG12,
   SVG13,
   SVG14,
+  // SvgShap_1,
   undone,
   notification1,
   notification2,
