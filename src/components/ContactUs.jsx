@@ -237,7 +237,7 @@ function ContactUs() {
                   }}
                   className="font-bold text-xl text-neutral-800 dark:text-neutral-200"
                 >
-                  Welcome to Aceternity
+                  Welcome to SOCIAL GOOSPOOS
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -249,8 +249,7 @@ function ContactUs() {
                   }}
                   className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300"
                 >
-                  Login to aceternity if you can because we don&apos;t have a
-                  login flow yet
+                  Feel free to contact us with any questions, feedback, or inquiries. We&apos;re here to help and will get back to you as soon as possible!
                 </motion.p>
 
                 <form className="my-8" onSubmit={handleSubmit}>
