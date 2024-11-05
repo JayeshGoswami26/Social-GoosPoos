@@ -1,7 +1,12 @@
+import { Suspense, lazy } from "react";
+import SubLoader from "../components/SubLoader";
 
 function DashboardPage() {
+  const Hero = lazy(() => import("../components/DashbordUI/Hero"));
   return (
-    <div className="min-h-screen flex justify-center items-center">Dashboard Page</div>
+    <Suspense fallback={<SubLoader/>}>
+    <Hero />
+  </Suspense>
   )
 }
 

@@ -149,7 +149,7 @@ const Hero = () => {
             />
           </div>
 
-          <BackgroundCircles />
+          <BackgroundCircles parallaxRef={parallaxRef} />
         </div>
 
         <CompanyLogos

@@ -18,13 +18,7 @@ function InfluencerHero() {
         <div className=" pt-[10rem] z-1 inset-0 flex flex-col items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl ">
           <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-yellow-100 to-purple-700">
             <motion.h1
-              initial={{ opacity: 0, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.2,
-                duration: 0.8,
-                ease: "easeInOut",
-              }}
+              
               className="h1 mb-6"
             >
               SOCIAL GOOSPOOS
@@ -45,7 +39,7 @@ function InfluencerHero() {
           </p>
         </div>
       </BackgroundGradientAnimation>
-      <div className="absolute top-16 left-1/2 -translate-x-1/2 z-1 ">
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 z-1 animatedCard ">
         <ContainerScroll>
           <img
             src={heroButturfly}

@@ -23,6 +23,18 @@
   }
 }
 
+.animatedCard{
+  animation: animatedCard forwards ease-in-out 1.5s ;
+}
+@keyframes animatedCard {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .rotate-45 {
   @apply rotate-[45deg]
 }
