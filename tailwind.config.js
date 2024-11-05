@@ -3,15 +3,14 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 import colors from 'tailwindcss/colors'
 import { textarea } from "framer-motion/m";
+
 // const colors = require("tailwindcss/colors");
 
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
-
 
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
