@@ -101,8 +101,7 @@ function Hero() {
                 }}
                 className="text-white text-xl md:text-2xl mt-6 text-center"
               >
-                This is chemical burn. It&apos;ll hurt more than you&apos;ve
-                ever been burned and you&apos;ll have a scar.
+                Your All-in-One Dashboard for Tracking, Managing, and Scaling Your Influence
               </motion.p>
               {/* <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
                 <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
